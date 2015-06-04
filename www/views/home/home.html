@@ -1,0 +1,48 @@
+
+<ion-view view-title="Pick Me Up" hide-back-button="true">
+  
+  <!-- the content will be wrapped in ion-content most of the time. one exception includes tabs. -->
+  <ion-content>
+    <!-- added list class to container element to designate list container  -->
+    <div class="list">
+      <!-- add the item class to an element to create a list item, in this case for linking to another view. Without class="item" it would still show the link, but really ugly and not ios-like -->
+      <!-- we are using <i> because typically <i> is an inline element that only modifies the text inside. Since we have no text inside, jsut two CSS classes, the first class gives the element the base CSS style for icon and the second portion gives the specific icon to display -->
+      <a href="#pickupreq" class="item item-icon-left"><i class="icon ion-email"></i>Make pick-up request</a>
+
+      <a href="#/trackpickup" class="item item-icon-left"><i class="icon ion-android-bicycle"></i>Track pick-up(s)</a>
+
+      <a href="#/pickuprecord" class="item item-icon-left"><i class="icon ion-clipboard"></i>Pick-up history </a>
+
+      <a href="#/seerequests" class="item item-icon-left"><i class="icon ion-paper-airplane"></i>See delivery requests</a>
+      
+      <a href="#/deliveryhistory" class="item item-icon-left"><i class="icon ion-clipboard"></i>Delivery history </a>
+      
+      <a href="#/" class="item item-icon-left"><i class="icon ion-cross"></i>. </a>
+      
+      <!-- item-icon-right would put the icon on the right hand side. -->
+      <a href="#/signup" class="item item-icon-left"> 
+        <i class="icon ion-document-text"></i> Sign Up </a>      
+      <a href="#/login" class="item item-icon-left"> 
+        <i class="icon ion-document-text"></i> Log in </a>
+      <a href="#/reservation" class="item item-icon-left"> 
+        <i class="icon ion-document-text"></i> See your reservation </a>
+
+
+      <!-- <a href="#/weather" class="item item-icon-left">
+        <i class="icon ion-ios-partlysunny"></i> Current weather </a>
+
+      <a href="#/restaurants" class="item item-icon-left">
+        <i class="icon ion-fork"></i>Nearby restaurants</a> -->
+
+
+    </div>
+
+  </ion-content>
+
+</ion-view>
+
+<!-- 
+reservation = request pickup
+weather = trackpickup
+restuarants = pickuprecord
+ -->
