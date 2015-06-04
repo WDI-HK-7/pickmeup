@@ -1,6 +1,8 @@
-app.controller('SignUpCtrl', ['$scope', '$http', '$location', function($scope, $http, $location){
+angular.module('App')
 
-  var url = "<%= ENV['URL'] %>" || "http://localhost:3000/"
+.controller('SignUpCtrl', ['$scope', '$http', '$location', function($scope, $http, $location){
+
+  var url = "http://localhost:3000/"
 
   $scope.user = {};
   $scope.form = {};
