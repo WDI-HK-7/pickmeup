@@ -1,6 +1,36 @@
 <ion-view view-title="Sign Up">
   
-  <!-- the content will be wrapped in ion-content most of the time. one exception includes tabs. -->
+
+   <ion-content>
+    <div class="card">
+      <div class="item item-text-wrap">
+      Sign up for Pick Me Up!
+      </div>
+
+      <div class="list">
+        <form ng-submit="form.signup()">
+
+          <label class="item item-input">
+            <input type="email" class="form-control" placeholder="Enter email" ng-model="user.email">
+          </label>
+
+          <label class="item item-input">
+            <input type="password" class="form-control" placeholder="Password" ng-model="user.password">
+          </label>
+
+          <label class="item item-input">
+            <input type="password" class="form-control" placeholder="Password Confirmation" ng-model="user.passwordConfirmation">
+          </label>
+          
+          <button type="submit" class="button button-block button-light">Submit</button>
+        </form>
+      </div>
+      
+    </div>
+  </ion-content>
+</ion-view>
+
+<!-- 
 
    <ion-content>
     <div class="card">
@@ -24,3 +54,4 @@
     </div>
   </ion-content>
 </ion-view>
+ -->

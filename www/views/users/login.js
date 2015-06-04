@@ -1,9 +1,8 @@
-
 angular.module('App')
 
 .controller('LoginCtrl', ['$scope', '$http', '$location', function($scope, $http, $location){
 
-  var url = "<%= ENV['URL'] %>" || "http://localhost:3000/";
+  var url = "http://localhost:3000/"
 
   $scope.user = {};
   $scope.form = {};
@@ -19,8 +18,13 @@ angular.module('App')
 
     $http.post(url + 'users/sign_in', data).success(function(response){
       console.log(response);
+
+    $location.path('/home');
+
     });
   };
+
+
 }]);
 
 

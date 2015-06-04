@@ -25,7 +25,7 @@ angular.module('App', ['ionic'])
 		templateUrl: 'views/pickupreq/pickupreq.html'
 	})
 	.state('login', {
-		url: '/login',
+		url: '/login',	
 		// note: where is this defined?? in login.js
 		controller: 'LoginCtrl',
 		templateUrl: 'views/users/login.html'
@@ -35,7 +35,12 @@ angular.module('App', ['ionic'])
 		// note: where is this defined?
 		controller: 'SignUpCtrl',
 		templateUrl: 'views/users/signup.html'
-	});
+	})
+	.state('logout', {
+		url: '/logout',
+		controller: 'LogoutCtrl',
+		templateUrl: 'views/users/logout.html'
+	});	
 	// declare fallback url to go to if the app cannot find the requested state, like the 404 error page on website. it user requests state that doesn't exist -  the otherwise route will be used to display home view.
 	$urlRouterProvider.otherwise('/home');
 })
