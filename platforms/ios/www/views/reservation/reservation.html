@@ -1,24 +1,33 @@
-<ion-view view-title="Reservation">
-  <ion-content>
-    <div class="list">
+
+<!-- the view's title is "reservation" -->
+<ion-view view-title="Reservation"> 
+  <!-- adding content wrapper to display content like we normally do -->
+  <ion-content> 
+    <!-- wrap the list with list components class so it looks good -->
+    <div class="list"> 
+      <!-- a list item with an icon, and binds the room value into the template -->
+      <div class="item item-icon-left"> 
+        <i class="icon ion-key"></i> Room: {{reservation.room}} 
+      </div> 
+      <!-- a list item using a filter in the binding, in this case formatting the date -->
       <div class="item item-icon-left">
-        <i class="icon ion-key"></i> Room: {{reservation.room}}
+        <i class="icon ion-calendar"></i> Check In: {{reservation.checkin |
+      date:'mediumDate'}}
       </div>
-      <div class="item item-icon-left">
-        <i class="icon ion-calendar"></i> Check In: {{reservation.checkin | date:'mediumDate'}}
-      </div>
-      <div class="item item-icon-left">
-        <i class="icon ion-calendar"></i> Check Out: {{reservation.checkout | date:'mediumDate'}}
-      </div>
+      <div class="item item-icon-left"> 
+        <i class="icon ion-calendar"></i> Check Out: {{reservation.checkout |
+      date:'mediumDate'}} 
+      </div> 
       <div class="item item-icon-left">
         <i class="icon ion-wifi"></i> Wifi Code: {{reservation.wifi}}
       </div>
       <div class="item item-icon-left">
+      <!-- a list item using a binding with an expression and filter -->
         <i class="icon ion-pricetag"></i> Rate: {{reservation.rate | currency}}/night
       </div>
-      <div class="item item-icon-left">
+      <div class="item item-icon-left"> 
         <i class="icon ion-pricetags"></i> Total: {{reservation.rate * 7 | currency}}
-      </div>
+      </div> 
     </div>
   </ion-content>
 </ion-view>

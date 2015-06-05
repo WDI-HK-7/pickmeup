@@ -32,7 +32,6 @@ angular.module('App', ['ionic'])
 	})
 	.state('signup', {
 		url: '/signup',
-		// note: where is this defined?
 		controller: 'SignUpCtrl',
 		templateUrl: 'views/users/signup.html'
 	})

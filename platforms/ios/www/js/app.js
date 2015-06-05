@@ -1,35 +1,50 @@
+'use strict';
+
+// angular module definition
 angular.module('App', ['ionic'])
 
-.config(function ($stateProvider, $urlRouterProvider) {
+// add new config method, inject $stateProvider
+.config(function($stateProvider, $urlRouterProvider) {
+	// declare first state of the home view
+	$stateProvider
 
-  $stateProvider
-    .state('home', {
-      url: '/home',
-      templateUrl: 'views/home/home.html'
-    })
-    .state('reservation', {
-      url: '/reservation',
-      controller: 'ReservationController',
-      templateUrl: 'views/reservation/reservation.html'
-    })
-    .state('weather', {
-      url: '/weather',
-      controller: 'WeatherController',
-      templateUrl: 'views/weather/weather.html'
-    })
-    .state('restaurants', {
-      url: '/restaurants',
-      controller: 'RestaurantsController',
-      templateUrl: 'views/restaurants/restaurants.html'
-    })
-    .state('tour', {
-      url: '/tour',
-      templateUrl: 'views/tour/tour.html'
-    });
-
-  $urlRouterProvider.otherwise('/tour');
-
+	.state('home', {
+		// the state is given a url that can be used with anchor links
+		url: '/home',
+		// tell the state to load a template from a given url when view is active
+		templateUrl: 'views/home/home.html'
+	})
+	.state('reservation', {
+		url: '/reservation',
+		// declare the name of the controller for this view. note that home doesn't have a a controller
+		controller: 'ReservationController',
+		templateUrl: 'views/reservation/reservation.html'
+	})
+	.state('pickupreq', {
+		url: '/pickupreq',
+		templateUrl: 'views/pickupreq/pickupreq.html'
+	})
+	.state('login', {
+		url: '/login',	
+		// note: where is this defined?? in login.js
+		controller: 'LoginCtrl',
+		templateUrl: 'views/users/login.html'
+	})
+	.state('signup', {
+		url: '/signup',
+		// note: where is this defined?
+		controller: 'SignUpCtrl',
+		templateUrl: 'views/users/signup.html'
+	})
+	.state('logout', {
+		url: '/logout',
+		controller: 'LogoutCtrl',
+		templateUrl: 'views/users/logout.html'
+	});	
+	// declare fallback url to go to if the app cannot find the requested state, like the 404 error page on website. it user requests state that doesn't exist -  the otherwise route will be used to display home view.
+	$urlRouterProvider.otherwise('/home');
 })
+
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -40,4 +55,41 @@ angular.module('App', ['ionic'])
       StatusBar.styleDefault();
     }
   });
-})
+});
+
+
+
+
+
+// 'use strict';
+
+// // angular module definition
+// angular.module('App', ['ionic'])
+
+// // add new config method, inject $stateProvider
+// .config(function($stateProvider, $urlRouterProvider) {
+// 	// declare first state of the home view
+// 	$stateProvider
+
+// 	.state('home', {
+// 		// the state is given a url that can be used with anchor links
+// 		url: '/home',
+// 		// tell the state to load a template from a given url when view is active
+// 		templateUrl: 'views/home/home.html'
+// 	})
+
+// 	.state('reservation', {
+// 		url: '/reservation',
+// 		// declare the name of the controller for this view. note that home doesn't have a a controller
+// 		controller: 'ReservationController',
+// 		templateUrl: 'views/reservation/reservation.html'
+// 	})
+
+// 	.state('pickupreq', {
+// 		url: '/pickupreq',
+// 		templateUrl: 'views/pickupreq/pickupreq.html'
+// 	});
+
+// 	// declare fallback url to go to if the app cannot find the requested state, like the 404 error page on website. it user requests state that doesn't exist -  the otherwise route will be used to display home view.
+// 	$urlRouterProvider.otherwise('/home');
+// })
