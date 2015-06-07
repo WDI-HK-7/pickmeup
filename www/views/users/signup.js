@@ -11,7 +11,13 @@ angular.module('App')
     console.log("signing up...");
 
     var data = {
-      user: $scope.user
+      user: {
+        'username': $scope.user.username,
+        'contactnum': $scope.user.contactnum,
+        'email': $scope.user.email,
+        'password': $scope.user.password,
+        'passwordConfirmation': $scope.user.passwordConfirmation,
+      }
     };
 
     console.log(data);
