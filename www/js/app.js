@@ -35,6 +35,11 @@ angular.module('App', ['ionic'])
 		url: '/pickupreq',
 		controller: 'PickupreqCtrl',
 		templateUrl: 'views/pickupreq/pickupreq.html'
+	})	
+	.state('googlemap', {
+		url: '/googlemap',
+		controller: 'MapController',
+		templateUrl: 'views/pickupreq/googlemap.html'
 	})
 	.state('tripsearch', {
 		url: '/tripsearch',
@@ -80,39 +85,3 @@ angular.module('App', ['ionic'])
   });
 });
 
-
-
-
-
-// 'use strict';
-
-// // angular module definition
-// angular.module('App', ['ionic'])
-
-// // add new config method, inject $stateProvider
-// .config(function($stateProvider, $urlRouterProvider) {
-// 	// declare first state of the home view
-// 	$stateProvider
-
-// 	.state('home', {
-// 		// the state is given a url that can be used with anchor links
-// 		url: '/home',
-// 		// tell the state to load a template from a given url when view is active
-// 		templateUrl: 'views/home/home.html'
-// 	})
-
-// 	.state('reservation', {
-// 		url: '/reservation',
-// 		// declare the name of the controller for this view. note that home doesn't have a a controller
-// 		controller: 'ReservationController',
-// 		templateUrl: 'views/reservation/reservation.html'
-// 	})
-
-// 	.state('pickupreq', {
-// 		url: '/pickupreq',
-// 		templateUrl: 'views/pickupreq/pickupreq.html'
-// 	});
-
-// 	// declare fallback url to go to if the app cannot find the requested state, like the 404 error page on website. it user requests state that doesn't exist -  the otherwise route will be used to display home view.
-// 	$urlRouterProvider.otherwise('/home');
-// })

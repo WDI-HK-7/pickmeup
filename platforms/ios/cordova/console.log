@@ -29,3 +29,23 @@
 2015-06-07 17:50:07.429 chapter4[13264:295721] Unlimited access to network resources
 2015-06-07 17:50:07.901 chapter4[13264:295721] Resetting plugins due to page load.
 2015-06-07 17:50:08.749 chapter4[13264:295721] Finished load of: file:///Users/dimpleyuen/Library/Developer/CoreSimulator/Devices/50D44F17-91F4-4142-A32A-5C58B2EE3870/data/Containers/Bundle/Application/64C9EDC2-B0D9-4EBC-856D-1AEFE7840089/chapter4.app/www/index.html#/landing
+2015-06-07 21:09:38.722 chapter4[50310:2332180] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/WilsonHome/Library/Developer/CoreSimulator/Devices/E6B5ABAE-8EEE-4D89-A025-026E8B306D08/data/Containers/Data/Application/1A712ED0-0316-40AD-9C46-469CE52B62E1/Library/Cookies/Cookies.binarycookies
+2015-06-07 21:09:38.970 chapter4[50310:2332180] Apache Cordova native platform version 3.8.0 is starting.
+2015-06-07 21:09:38.971 chapter4[50310:2332180] Multi-tasking -> Device: YES, App: YES
+2015-06-07 21:09:38.982 chapter4[50310:2332180] Unlimited access to network resources
+2015-06-07 21:09:39.768 chapter4[50310:2332180] Resetting plugins due to page load.
+2015-06-07 21:09:42.735 chapter4[50310:2332180] Finished load of: http://192.168.0.104:8100/#/landing
+2015-06-07 21:29:59.459 chapter4[50310:2332180] Resetting plugins due to page load.
+2015-06-07 21:30:00.343 chapter4[50310:2332180] Finished load of: http://192.168.0.104:8100/#/landing
+2015-06-07 21:30:13.384 chapter4[50310:2332180] Resetting plugins due to page load.
+2015-06-07 21:30:13.787 chapter4[50310:2332180] Finished load of: http://192.168.0.104:8100/#/landing
+2015-06-07 21:30:28.988 chapter4[50310:2332180] Resetting plugins due to page load.
+2015-06-07 21:30:29.331 chapter4[50310:2332180] Finished load of: http://192.168.0.104:8100/#/landing
+2015-06-07 21:36:56.957 chapter4[50310:2332180] Resetting plugins due to page load.
+2015-06-07 21:36:57.655 chapter4[50310:2332180] Finished load of: http://192.168.0.104:8100/#/landing
+2015-06-07 21:37:00.984 chapter4[50310:2332180] Resetting plugins due to page load.
+2015-06-07 21:37:01.296 chapter4[50310:2332180] Finished load of: http://192.168.0.104:8100/#/landing
+2015-06-07 22:00:42.801 chapter4[50310:2332180] Resetting plugins due to page load.
+2015-06-07 22:00:43.395 chapter4[50310:2332180] Finished load of: http://192.168.0.104:8100/#/landing
+2015-06-07 22:01:00.436 chapter4[50310:2332180] Resetting plugins due to page load.
+2015-06-07 22:01:00.779 chapter4[50310:2332180] Finished load of: http://192.168.0.104:8100/#/landing
