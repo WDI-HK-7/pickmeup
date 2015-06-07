@@ -1,26 +1,22 @@
-<ion-view view-title="Login">
+<ion-view view-title="Login" hide-back-button="false">
   
   <!-- the content will be wrapped in ion-content most of the time. one exception includes tabs. -->
-   <ion-content>
-    <div class="card">
-      <div class="item item-text-wrap">
-      Log In
-      </div>
-
+   <ion-content class="index-scroll-content">
+    <div class="card login-card">
       <div class="list">
         <form ng-submit="form.login()">
-
           <label class="item item-input">
-            <!-- <label>Email address</label> -->
-            <input type="email" class="form-control" placeholder="Enter email" ng-model="user.email">
+            <span class="input-label">Email</span>
+            <input type="email" class="form-control" placeholder="e.g. john@doe.com" ng-model="user.email">
           </label>
 
           <label class="item item-input">
-            <!-- <label>Password</label> -->
-            <input type="password" class="form-control" placeholder="Password" ng-model="user.password">
+            <span class="input-label">Password</span>
+            <input type="password" class="form-control" placeholder="" ng-model="user.password">
           </label>
-
-          <button type="submit" class="button button-block button-light">Submit</button>
+          <div class="login-submit-wrap">
+            <button type="submit" class="button button-block button-dark login-submit">Submit</button>
+          </div>
         </form>
       </div>
     </div>
