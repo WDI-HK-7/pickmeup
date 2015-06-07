@@ -4,20 +4,33 @@ angular.module('App')
 
   var url = "http://localhost:3000/"
 
-  $scope.post = {};
   $scope.form = {};
+  $scope.post = {};
 
+  // note: the .pickupreq links to the same in the .html. Doesn't need to have the same name in post controller (eg no need to be .create even tho that's in the controller)
   $scope.form.pickupreq = function(){
-    console.log("making pickup request...");
-
+    // console.log("making pickup request...");
     var data = {
-      // post: $scope.post
-      'post[pulocation]': $scope.post.pulocation,
-      'post[putime]': $scope.post.putime,
-      'post[destination]': $scope.post.destination,
-      'post[delitime]': $scope.post.delitime,
-      'post[contactnum]': $scope.post.contactnum
+      post: {// post: $scope.post
+        'pulocation': $scope.post.pulocation,
+        'putime': $scope.post.putime,
+        'destination': $scope.post.destination,
+        'delitime': $scope.post.delitime,
+        'contactnum': $scope.post.contactnum
+      }
     };
+
+
+
+    // var data = {
+    //   // post: $scope.post
+    //   'post[pulocation]': $scope.post.pulocation,
+    //   'post[putime]': $scope.post.putime,
+    //   'post[destination]': $scope.post.destination,
+    //   'post[delitime]': $scope.post.delitime,
+    //   'post[contactnum]': $scope.post.contactnum
+    // };
+
 
     console.log(data);
 
@@ -28,21 +41,37 @@ angular.module('App')
 
     });
   };
-
-
 }]);
 
 
-  // $scope.form = {};
-  // $scope.post = {};
-  // $scope.picture= {};
 
-  // var url = "<%= ENV['URL'] %>" || "http://localhost:3000/";
+// app.controller('PostCtrl',['$scope', '$http', '$location', function($scope, $http, $location) {
+
+//   $scope.form = {};
+//   // $scope.user = {};
+//   var url = "<%= ENV['URL'] %>" || "http://localhost:3000/";
   
-  // $scope.form.create = function() {
-  //   var data = {
-  //     'post[title]': $scope.post.title,
-  //     'post[content]': $scope.post.content,
-  //     'post[category]': $scope.post.category
-  //   };
-  //   
+//     $http.get(url + 'posts').success(function(response){
+//       console.log(response)
+
+//       $scope.posts = response;
+
+//       $scope.form.create = function(index){
+//         // console.log($scope.posts);
+//         // $scope.posts[index]
+
+//         var data = {
+//           comment: {
+//             content: $scope.posts[index].new_comment.content,
+//             post_id: $scope.posts[index].id
+//           }
+//         }
+
+//         $http.post(url + 'comments', data).success(function(response){
+//           console.log(response);
+//           $scope.posts[index].comments.push(data);
+//           $scope.posts[index].new_comment.content ="";
+//         });
+//       }
+//     });
+// }]);
