@@ -4,19 +4,11 @@
   <a href="#/tripfilter"><button class="button" style="border-radius: 5px">Filters</button></a>
   </ion-nav-buttons>
   <ion-content>
-    <!-- <div ng-repeat="post in posts track by $index">
-      <div class="page-header">
-        {{ post.pulocation }}
-        {{ post.content }}
-        {{ post.category }}
-        <small>
-          {{ post.created_at | date }}
-        </small>
-      </div> -->
-    </div>
 
+  <!-- Posts -->
     <div class="list card trip-card" ng-repeat="post in posts track by $index">
 
+    <!-- Header Information -->
       <div class="item item-avatar">
         <img src="http://placehold.it/80x80">
         <h2 class="trip-header">{{ post.username }}</h2>
@@ -24,6 +16,8 @@
       </div>
 
       <div class="item item-body item-text-wrap trip-content">
+        
+      <!-- Location Information -->
         <div class="wrap" style="text-align: center">
           <div class="item location-item" style="border: 1px solid #ddd; border-radius: 4px; vertical-align: top">
             <b>Pick-Up Location</b>
@@ -43,6 +37,7 @@
           </div>
         </div>
 
+      <!-- Time Information -->
         <div class="wrap" style="text-align: center; vertical-align: top">
           <div class="item time-item time-item-1" style="border: none;vertical-align: top">
             <b>Pick-Up Time:</b>
@@ -56,13 +51,16 @@
           </div>
         </div>
         
+      <!-- Remarks -->
         <p class="trip-body">
           <b>Remarks:</b>
           <br>
           {{ post.remarks }}
         </p>
+
+      <!-- Take This Order Button -->
         <div class="take-order-wrap">
-          <button class="button button-block button-positive take-order-button">
+          <button class="button button-block button-positive take-order-button" ng-click="updateStatusToProcessing($index)">
           Take This Order!
           </button>
         </div>

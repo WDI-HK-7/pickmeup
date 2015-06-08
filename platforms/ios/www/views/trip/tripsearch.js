@@ -4,6 +4,11 @@ angular.module('App')
 
   var url = "http://localhost:3000/"
 
+  $http.get(url + '/posts').success(function(response){
+    console.log(response);
+    $scope.posts = response;
+  });
+
 }]);
 
 

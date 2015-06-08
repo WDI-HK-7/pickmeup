@@ -13,23 +13,35 @@
         <form ng-submit="form.pickupreq()">
 
         <label class="item item-input">
-          <input type="text" placeholder="Pick up location" ng-model="post.pulocation">
+          <input type="text" placeholder="Pick-Up Location (integrate google maps if possible)" ng-model="post.pulocation">
         </label>
 
         <label class="item item-input">
-          <input type="text" placeholder="Pick up time" ng-model="post.putime">
+          <input type="text" placeholder="Package Type" ng-model="post.packagetype">
         </label>
 
         <label class="item item-input">
-          <input type="text" placeholder="Package destination" ng-model="post.destination">
+          <input type="text" placeholder="Pick-Up Date (range?)" ng-model="post.pudate">
         </label>
 
         <label class="item item-input">
-          <input type="text" placeholder="Delivery time" ng-model="post.delitime">
+          <input type="text" placeholder="Pick-Up Time (range?)" ng-model="post.putime">
         </label>
 
         <label class="item item-input">
-          <input type="text" placeholder="Your phone number" ng-model="post.contactnum">
+          <input type="text" placeholder="Package Destination" ng-model="post.destination">
+        </label>
+
+        <label class="item item-input">
+          <input type="text" placeholder="Delivery Date (range?)" ng-model="post.delidate">
+        </label>
+
+        <label class="item item-input">
+          <input type="text" placeholder="Delivery Time (range?)" ng-model="post.delitime">
+        </label>
+
+        <label class="item item-input">
+          <input type="text" placeholder="Remarks" ng-model="post.remarks">
         </label>
 
         <button class="button button-block button-light">
