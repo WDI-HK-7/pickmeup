@@ -4,7 +4,9 @@
 angular.module('App', ['ionic'])
 
 // add new config method, inject $stateProvider
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
+	$httpProvider.defaults.withCredentials = true;
+
 	// declare first state of the home view
 	$stateProvider
 	// 	.state('index', {
@@ -35,6 +37,21 @@ angular.module('App', ['ionic'])
 		url: '/pickupreq',
 		controller: 'PickupreqCtrl',
 		templateUrl: 'views/pickupreq/pickupreq.html'
+	})
+	.state('trackreq', {
+		url: '/trackreq',
+		controller: 'TrackreqCtrl',
+		templateUrl: 'views/trackreq/trackreq.html'
+	})
+	.state('processingreq', {
+		url: '/processingreq',
+		controller: 'ProcessingreqCtrl',
+		templateUrl: 'views/trackreq/processingreq.html'
+	})
+	.state('closedreq', {
+		url: '/closedreq',
+		controller: 'ClosedreqCtrl',
+		templateUrl: 'views/trackreq/closedreq.html'
 	})
 	.state('tripsearch', {
 		url: '/tripsearch',

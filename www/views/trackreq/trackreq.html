@@ -1,0 +1,82 @@
+
+<ion-view view-title="Track Your Requests">
+    <div class="tabs-striped tabs-top">
+      <div class="tabs">
+        <a class="tab-item active" href="#trackreq">
+          <!-- <i class="icon ion-home"></i> -->
+          Open
+        </a>
+        <a class="tab-item" href="#processingreq">
+          <!-- <i class="icon ion-star"></i> -->
+          Processing
+        </a>
+        <a class="tab-item" href="#closedreq">
+          <!-- <i class="icon ion-star"></i> -->
+          Closed
+        </a>
+      </div>
+    </div>
+  <ion-content>
+  <br>
+  <br>
+  <!-- Posts -->
+    <div class="list card trip-card" ng-repeat="post in posts track by $index">
+
+    <!-- Header Information -->
+      <div class="item item-avatar">
+        <img src="http://placehold.it/80x80">
+        <h2 class="trip-header">{{ post.username }}</h2>
+        <p class="trip-header">Package Type: {{ post.packagetype }}</p>
+      </div>
+
+      <div class="item item-body item-text-wrap trip-content">
+        
+      <!-- Location Information -->
+        <div class="wrap" style="text-align: center">
+          <div class="item location-item" style="border: 1px solid #ddd; border-radius: 4px; vertical-align: top">
+            <b>Pick-Up Location</b>
+            <br>
+            {{ post.pulocation }}
+            <br>
+          </div>
+
+          <div class="item arrow-item" style="border: none; display: inline-block; padding: 0px 10px; vertical-align: top; top: 25px">
+            <b> > </b>
+          </div>
+
+          <div class="item location-item item-text-wrap" style="border: 1px solid #ddd; border-radius: 4px;vertical-align: top">
+            <b>Delivery Location</b>
+            <br>
+            {{ post.destination }}
+          </div>
+        </div>
+
+      <!-- Time Information -->
+        <div class="wrap" style="text-align: center; vertical-align: top">
+          <div class="item time-item time-item-1" style="border: none;vertical-align: top">
+            <b>Pick-Up Time:</b>
+            <br>
+            {{ post.pudate + ", " + post.putime }}
+          </div>
+          <div class="item time-item item-text-wrap" style="border: none;vertical-align: top">
+            <b>Delivery Time:</b>
+            <br>
+            {{ post.delidate + ", " + post.delitime }}
+          </div>
+        </div>
+        
+      <!-- Remarks -->
+        <p class="trip-body">
+          <b>Remarks:</b>
+          <br>
+          {{ post.remarks }}
+        </p>
+        
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>
+
+
+

@@ -7,6 +7,11 @@ angular.module('App')
   $scope.form = {};
   $scope.post = {};
 
+
+  $http.get(url + 'authenticated').success(function(response){
+    console.log(response);
+  });
+
   // note: the .pickupreq links to the same in the .html. Doesn't need to have the same name in post controller (eg no need to be .create even tho that's in the controller)
   $scope.form.pickupreq = function(){
     // console.log("making pickup request...");
@@ -20,9 +25,9 @@ angular.module('App')
         'delidate': $scope.post.delidate,
         'delitime': $scope.post.delitime,
         'remarks': $scope.post.remarks,
+        'status': 'open',
       }
     };
-
 
 
     // var data = {
