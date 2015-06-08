@@ -45,7 +45,7 @@ angular.module('App')
     $http.post(url + 'posts', data).success(function(response){
       console.log(response);
 
-    $location.path('/tripsearch');
+    $location.path('/trackreq');
 
     });
   };
