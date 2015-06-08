@@ -7,19 +7,27 @@ angular.module('App')
   $scope.form = {};
   $scope.post = {};
 
+
+  $http.get(url + 'authenticated').success(function(response){
+    console.log(response);
+  });
+
   // note: the .pickupreq links to the same in the .html. Doesn't need to have the same name in post controller (eg no need to be .create even tho that's in the controller)
   $scope.form.pickupreq = function(){
     // console.log("making pickup request...");
     var data = {
       post: {// post: $scope.post
         'pulocation': $scope.post.pulocation,
+        'packagetype': $scope.post.packagetype,
+        'pudate': $scope.post.pudate,
         'putime': $scope.post.putime,
         'destination': $scope.post.destination,
+        'delidate': $scope.post.delidate,
         'delitime': $scope.post.delitime,
-        'contactnum': $scope.post.contactnum
+        'remarks': $scope.post.remarks,
+        'status': 'open',
       }
     };
-
 
 
     // var data = {
@@ -37,7 +45,7 @@ angular.module('App')
     $http.post(url + 'posts', data).success(function(response){
       console.log(response);
 
-    // $location.path('/home');
+    $location.path('/tripsearch');
 
     });
   };

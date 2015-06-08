@@ -24,14 +24,19 @@
 
     <!-- include the below to link the controller in the app.js to the actually controller (the .js). For now, the controllers are included in www/views (sometimes they are included in www/js/controllers) -->
     <script src="views/reservation/reservation.js"></script>
+    <script src="views/trackreq/trackreq.js"></script>
+    <script src="views/trackreq/processingreq.js"></script>
+    <script src="views/trackreq/closedreq.js"></script>
     <script src="views/users/signup.js"></script>
     <script src="views/users/login.js"></script>
     <script src="views/users/logout.js"></script>
     <script src="views/pickupreq/pickupreq.js"></script>
+    <script src="views/pickupreq/googlemap.js"></script>
     <script src="views/landing/landing.js"></script>
     <script src="views/trip/tripsearch.js"></script>
     <script src="views/trip/tripfilter.js"></script>
-    
+
+
   </head>
 
   <!-- the angular app is attached here -->
@@ -49,6 +54,11 @@
     <ion-nav-view>
 
     </ion-nav-view>
+
+<!-- browser app key -->
+ <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyB0q16fXHEhUEaXejUMJlDAOrQVcFChn2w&sensor=true"></script>
+ <!-- ios key -->
+ <!-- <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDcLOlUhiBj3b3faFgtThk0B4rva-LCjVc&sensor=true"></script> -->
 
   </body>
 </html>

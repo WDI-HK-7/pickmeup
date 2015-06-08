@@ -1,10 +1,24 @@
 
-<ion-view view-title="Search For A Trip">
-  <ion-nav-buttons side="secondary">
-  <a href="#/tripfilter"><button class="button" style="border-radius: 5px">Filters</button></a>
-  </ion-nav-buttons>
+<ion-view view-title="Track Your Requests">
+    <div class="tabs-striped tabs-top">
+      <div class="tabs">
+        <a class="tab-item active" href="#trackreq">
+          <!-- <i class="icon ion-home"></i> -->
+          Open
+        </a>
+        <a class="tab-item" href="#processingreq">
+          <!-- <i class="icon ion-star"></i> -->
+          Processing
+        </a>
+        <a class="tab-item" href="#closedreq">
+          <!-- <i class="icon ion-star"></i> -->
+          Closed
+        </a>
+      </div>
+    </div>
   <ion-content>
-
+  <br>
+  <br>
   <!-- Posts -->
     <div class="list card trip-card" ng-repeat="post in posts track by $index">
 
@@ -57,13 +71,7 @@
           <br>
           {{ post.remarks }}
         </p>
-
-      <!-- Take This Order Button -->
-        <div class="take-order-wrap">
-          <button class="button button-block button-positive take-order-button" ng-click="updateStatusToProcessing($index)">
-          Take This Order!
-          </button>
-        </div>
+        
       </div>
     </div>
 
