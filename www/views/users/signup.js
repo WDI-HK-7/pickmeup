@@ -12,18 +12,21 @@ angular.module('App')
 
     var data = {
       user: {
-        'username': $scope.user.username,
-        'contactnum': $scope.user.contactnum,
-        'email': $scope.user.email,
-        'password': $scope.user.password,
-        'passwordConfirmation': $scope.user.passwordConfirmation,
+        users:$scope.user
+        // 'username': $scope.user.username,
+        // 'contactnum': $scope.user.contactnum,
+        // 'email': $scope.user.email,
+        // 'password': $scope.user.password,
+        // 'passwordConfirmation': $scope.user.passwordConfirmation,
       }
     };
 
     console.log(data);
 
-    $http.post(url + 'users', {withCredentials: true}, data).success(function(response){
+    $http.post(url + 'users', data).success(function(response){
       console.log(response);
+//{withCredentials: true},
+
 
     $location.path('/login');
     });
