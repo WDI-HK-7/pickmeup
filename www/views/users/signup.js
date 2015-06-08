@@ -19,7 +19,13 @@ angular.module('App')
     $http.post(url + 'users', data).success(function(response){
       console.log(response);
 
-    $location.path('/login');
+      $http.post(url + 'users/sign_in', data).success(function(response){
+        console.log(response);
+
+        $location.path('/home');
+
+      });
+
     });
   };
 

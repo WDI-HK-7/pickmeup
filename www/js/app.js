@@ -18,7 +18,7 @@ angular.module('App', ['ionic'])
 	.state('landing', {
 		// the state is given a url that can be used with anchor links
 		url: '/landing',
-		// tell the state to load a template from a given url when view is active
+		controller: 'LandingCtrl',
 		templateUrl: 'views/landing/landing.html'
 	})
 	.state('home', {

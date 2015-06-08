@@ -4,9 +4,14 @@ angular.module('App')
 
   var url = "http://localhost:3000/"
 
-  $scope.goToLogin = function() {
-    $location.path('/login');
-  }
+  $http.get(url + 'authenticated').success(function(response){
+    console.log(response);
+
+    if (response != null) {
+      $location.path('/home');
+    }
+
+  });
 
 }]);
 
