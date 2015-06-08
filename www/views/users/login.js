@@ -23,7 +23,8 @@ angular.module('App')
 
     });
   };
-
+  
+// {withCredentials: true}, 
 
 }]);
 
