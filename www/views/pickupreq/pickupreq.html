@@ -6,35 +6,43 @@
         <form ng-submit="form.pickupreq()">
 
         <label class="item item-input">
-          <input type="text" placeholder="Pick-Up Location (integrate google maps if possible)" ng-model="post.pulocation">
+          <span class="input-label">Pick-Up Location</span>
+          <input type="text" ng-model="post.pulocation">
         </label>
 
         <label class="item item-input">
-          <input type="text" placeholder="Package Type" ng-model="post.packagetype">
+          <span class="input-label">Package Type</span>
+          <input type="text" ng-model="post.packagetype">
         </label>
 
         <label class="item item-input">
-          <input type="date" placeholder="Pick-Up Date (range?)" ng-model="post.pudate">
+          <span class="input-label">Earliest Pick-Up Time</span>
+          <input type="datetime-local" ng-model="post.earlyputime">
         </label>
 
         <label class="item item-input">
-          <input type="time" placeholder="Pick-Up Time (range?)" ng-model="post.putime">
+          <span class="input-label">Latest Pick-Up Time</span>
+          <input type="datetime-local" ng-model="post.lateputime">
         </label>
 
         <label class="item item-input">
-          <input type="text" placeholder="Package Destination" ng-model="post.destination">
+          <span class="input-label">Destination</span>
+          <input type="text" ng-model="post.destination">
         </label>
 
         <label class="item item-input">
-          <input type="date" placeholder="Delivery Date (range?)" ng-model="post.delidate">
+          <span class="input-label">Earliest Delivery Time</span>
+          <input type="datetime-local" ng-model="post.earlydelitime">
         </label>
 
         <label class="item item-input">
-          <input type="time" placeholder="Delivery Time (range?)" ng-model="post.delitime">
+          <span class="input-label">Latest Delivery Time</span>
+          <input type="datetime-local" ng-model="post.latedelitime">
         </label>
 
         <label class="item item-input">
-          <input type="text" placeholder="Remarks" ng-model="post.remarks">
+          <span class="input-label">Remarks</span>
+          <input type="text" ng-model="post.remarks">
         </label>
 
         <button class="button button-block button-light">
