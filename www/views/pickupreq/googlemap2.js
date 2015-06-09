@@ -11,6 +11,7 @@ var geocoder;
 var map;
 var infowindow = new google.maps.InfoWindow();
 var marker;
+
 function initialize() {
   geocoder = new google.maps.Geocoder();
   var latlng = new google.maps.LatLng(40.730885,-73.997383);
@@ -19,7 +20,7 @@ function initialize() {
     center: latlng,
     mapTypeId: 'roadmap'
   }
-  map = new google.maps.Map(document.getElementById('map'), mapOptions);
+  map = new google.maps.Map(document.getElementById("map"), mapOptions);
 }
 
 $scope.form.codeLatLng =function() {
@@ -56,6 +57,7 @@ $scope.form.codeLatLng =function() {
         });
         infowindow.setContent(results[1].formatted_address);
         infowindow.open(map, marker);
+        console.log(results[1]);
       } else {
         alert('No results found');
       }
@@ -65,6 +67,7 @@ $scope.form.codeLatLng =function() {
   });
 }
 
+// note from stackoverflow: need to initalize with () .
 google.maps.event.addDomListener(window, 'load', initialize());
   
 

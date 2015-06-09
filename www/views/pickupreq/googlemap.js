@@ -28,6 +28,11 @@ angular.module('App')
                 map: map,
                 title: "My Location"
             });
+            // console.log(myLocation[Rh][position]);
+            console.log(myLocation);
+            console.log(myLocation['position']);
+            console.log(myLatlng);
+            console.log(myLatlng['A']);
         });
  
         $scope.map = map;
