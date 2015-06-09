@@ -69,19 +69,19 @@
             <ion-modal-view ng-repeat="post in posts track by $index">
               <ion-header-bar class="bar bar-header bar-dark">
                 <h1 class="title">Order Accepted</h1>
-                <button class="button button-clear button-primary" ng-click="cancelOrder($index)">Cancel Order</button>
+                <button class="button button-clear button-primary" ng-click="cancelOrder($index)">Cancel</button>
               </ion-header-bar>
               <ion-content class="padding">
                 <center>
                   <br>
                   <p style="font-size: 20px;">
-                    <b><span style="font-size: 20px;">Thank You For Accepting This Order!</span></b>
+                    <b><span style="font-size: 20px;">Thank You For Accepting This Order.</span></b>
                     <br>
                     <br>
                     <br>
                     Please contact <b>{{ post.username }}</b> at
                     <br>
-                    <span style="font-size: 25px; line-height: 50px;"><b>{{ post.contactnum }}</b></span>
+                    <span style="font-size: 25px; line-height: 40px;"><b>{{ post.contactnum }}</b></span>
                     <br>
                     to confirm delivery details.
                     <br>

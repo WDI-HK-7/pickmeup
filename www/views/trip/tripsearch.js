@@ -22,12 +22,18 @@ angular.module('App')
   }).then(function(modal) {
     $scope.modal = modal;
   });
-  
+
 // Update Status To Processing
-  $scope.updateStatusToProcessing = function(index) {    
+  $scope.updateStatusToProcessing = function(index) {
+
+    $http.get(url + 'authenticated').success(function(response){
+      user = response;
+      console.log(user.id);
+
     var patch_processing_data = {
       post: {
-        status: "processing"
+        status: "processing",
+        postman_id: user.id
       }
     }
 
@@ -35,15 +41,25 @@ angular.module('App')
       console.log(response);
       $scope.modal.show();
     })
+
+    });
+
+  }
+
+//Call Later Function
+  $scope.callLater = function() {
+    $scope.modal.hide();
+    $location.path('/tracktrip');
   }
 
 // Update Status Back To Open
   $scope.cancelOrder = function(index) {
     $scope.modal.hide();
-    
+
     var patch_open_data = {
       post: {
-        status: "open"
+        status: "open",
+        postman_id: null
       }
     }
 
