@@ -28,11 +28,9 @@ angular.module('App')
                 map: map,
                 title: "My Location"
             });
-            // console.log(myLocation[Rh][position]);
-            console.log(myLocation);
+            // console.log(myLocation);
             console.log(myLocation['position']);
-            console.log(myLatlng);
-            console.log(myLatlng['A']);
+            console.log("Your current coordinates are "+myLocation['position']);
         });
  
         $scope.map = map;

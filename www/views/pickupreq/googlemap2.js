@@ -58,6 +58,7 @@ $scope.form.codeLatLng =function() {
         infowindow.setContent(results[1].formatted_address);
         infowindow.open(map, marker);
         console.log(results[1]);
+        console.log("The address is "+results[1]['formatted_address']);
       } else {
         alert('No results found');
       }
