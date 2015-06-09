@@ -25,8 +25,6 @@ angular.module('App')
 
     $http.post(url + 'users', data).success(function(response){
       console.log(response);
-//{withCredentials: true},
-
 
     $location.path('/login');
     });

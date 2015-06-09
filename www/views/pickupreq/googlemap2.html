@@ -1,0 +1,69 @@
+
+<ion-view view-title="Pick Me Up - Google Maps Test">
+
+
+    <ion-header-bar class="bar-dark" >
+      <h1 class="title">Google Maps Example2</h1>
+    </ion-header-bar>
+
+    <ion-content>
+
+
+<!-- google reverse geocoding example -->
+<!-- 
+        <form ng-submit="form.codeLatLng()">
+
+
+      <div id="panel">
+        <input id="latlng" type="text" value="40.714224,-73.961452">
+        <input type="button" value="Reverse Geocode" onclick="codeLatLng()">
+            <button type="submit" class="button button-block button-dark">Submit</button>
+
+      </div>
+      <div id="map-canvas"></div>
+        </form>
+ -->
+      <div>
+
+        <form ng-submit="form.codeLatLng()">
+
+          <label class="item item-input">
+            <span class="input-label">Latitude</span>
+            <input type="text" class="form-control" placeholder="Latitude" ng-model="location.latitude">
+          </label>
+
+          <label class="item item-input">
+            <span class="input-label">Longitude</span>
+            <input type="text" class="form-control" placeholder="Latitude" ng-model="location.longitude">
+          </label>
+
+          <div class="signup-submit-wrap">
+            <button type="submit" class="button button-block button-dark">Submit</button>
+          </div>
+
+        </form>
+
+      <!-- <div id="map-canvas"></div> -->
+        <div id="map" data-tap-disabled="true"></div>  
+        
+      </div>
+
+
+
+<!-- w3 school? -->
+<!-- <button onclick="alert(map.getCenter());">Get center</button> -->
+<!-- <br><br> -->
+<!-- <div id="googleMap"style="width:400px;height:300px;"></div> -->
+
+
+    </ion-content>
+
+    <ion-footer-bar class="bar-dark">
+      <a ng-click="centerOnMe()" class="button button-icon icon ion-navigate">Find Me</a>
+    </ion-footer-bar>
+
+
+
+</ion-view>
+
+

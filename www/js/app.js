@@ -1,10 +1,23 @@
 'use strict';
 
+
+// angular.module('urlConstant', []).constant('apiUrl', 'http://hikehk.herokuapp.com/')
+
 // angular module definition
-angular.module('App', ['ionic'])
+angular.module('App', ['ionic','uiGmapgoogle-maps'])
+
 
 // add new config method, inject $stateProvider
-.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
+.config(function($stateProvider, $urlRouterProvider, $httpProvider, uiGmapGoogleMapApiProvider) {
+
+// Below not needed?
+// uiGmapGoogleMapApiProvider.configure({
+ //        key: 'AIzaSyB0q16fXHEhUEaXejUMJlDAOrQVcFChn2w',
+ //        v: '3.17',
+ //        libraries: 'weather,geometry,visualization'
+ //    });
+
+	//httpProvider for authentication
 	$httpProvider.defaults.withCredentials = true;
 
 	// declare first state of the home view
@@ -42,6 +55,11 @@ angular.module('App', ['ionic'])
 		url: '/googlemap',
 		controller: 'MapController',
 		templateUrl: 'views/pickupreq/googlemap.html'
+	})
+	.state('googlemap2', {
+		url: '/googlemap2',
+		controller: 'MapController2',
+		templateUrl: 'views/pickupreq/googlemap2.html'
 	})
 	.state('trackreq', {
 		url: '/trackreq',
