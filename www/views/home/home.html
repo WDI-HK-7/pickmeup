@@ -7,6 +7,19 @@
     <div class="list">
       <!-- add the item class to an element to create a list item, in this case for linking to another view. Without class="item" it would still show the link, but really ugly and not ios-like -->
       <!-- we are using <i> because typically <i> is an inline element that only modifies the text inside. Since we have no text inside, jsut two CSS classes, the first class gives the element the base CSS style for icon and the second portion gives the specific icon to display -->
+      <div class="profile-area">
+        <br>
+        <br>
+        <img src="../images/profile.png" class="profile-picture">
+        <br>
+        <span class="username">{{ user.username }}</span>
+        <br>
+        <br>
+        Edit Profile
+        <br>
+        <br>
+      </div>
+
       <div class="item item-divider">Client</div>
       <a href="#pickupreq" class="item item-icon-left home-menu"><i class="icon ion-email"></i>Make A Pick-Up Request</a>
 
