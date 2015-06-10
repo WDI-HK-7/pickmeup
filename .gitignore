@@ -39,3 +39,5 @@ bower.json
 
 /platforms/
 /plugins/
+/bower_components/angular-google-maps
+/bower_components/lodash

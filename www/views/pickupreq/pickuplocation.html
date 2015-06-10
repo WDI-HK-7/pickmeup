@@ -1,0 +1,46 @@
+<ion-view view-title="Pick Me Up - Google Maps Test">
+
+
+<!-- option that shows the current location (works) -->
+<!--   <ion-content ng-controller="MapController">
+      <div id="map" data-tap-disabled="true"></div>
+  </ion-content>
+ -->
+
+    <ion-header-bar class="bar-dark" >
+      <h1 class="title">Google Maps Example</h1>
+    </ion-header-bar>
+
+      <!-- OPTION 2 -->
+    <ion-content>
+
+      <div class="card login-card">
+          <div class="list">
+            <form ng-submit="form.submitLocation()">
+              <label class="item item-input">
+                <span class="input-label">Current Location</span>
+                <input type="text" id="mycurloc" class="form-control" placeholder="Address" ng-model="location.address">
+              </label>
+              <div class="login-submit-wrap">
+                <button type="submit" class="button button-block button-dark login-submit">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      
+        <div id="map" data-tap-disabled="true"></div>  
+
+<!-- angular google maps API guide -->
+    <!-- <ui-gmap-google-map center='map.center' zoom='map.zoom'> -->
+    <!-- </ui-gmap-google-map> -->
+
+
+    </ion-content>
+
+    <ion-footer-bar class="bar-dark">
+      <a ng-click="centerOnMe()" class="button button-icon icon ion-navigate">Find Me</a>
+    </ion-footer-bar>
+
+
+
+</ion-view>
