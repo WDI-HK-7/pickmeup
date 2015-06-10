@@ -73,7 +73,6 @@ angular.module('App')
             var elem = document.getElementById("mycurloc");
             elem.value = myLocation['position'];
             var input = elem.value;
-            console.log("testttt" +input)
 
             // this is where we convert coordinates into address
             function coordToAdd(input) {
