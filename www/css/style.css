@@ -124,6 +124,11 @@ body {
   margin-left: 3px;
 }*/
 
+/******************Track Trips*********************/
+.item-body {
+  overflow-x: hidden;
+}
+
 /***************** Google Maps *********************/
 .scroll {
     height: 100%;

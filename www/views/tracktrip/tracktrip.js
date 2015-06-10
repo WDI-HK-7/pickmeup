@@ -2,7 +2,7 @@ angular.module('App')
 
 .controller('TracktripCtrl', ['$scope', '$http', '$location', function($scope, $http, $location){
 
-  var url = "http://localhost:3000/"
+  var url = "https://wdi-pickmeup.herokuapp.com/" || "http://localhost:3000/";
 
   $scope.getOpenTrips = function(status) {
     $http.get(url + 'authenticated').success(function(response){

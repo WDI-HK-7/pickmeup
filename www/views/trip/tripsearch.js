@@ -2,7 +2,7 @@ angular.module('App')
 
 .controller('TripsearchCtrl', ['$scope', '$http', '$location', '$ionicModal', function($scope, $http, $location, $ionicModal){
 
-  var url = "http://localhost:3000/"
+  var url = "https://wdi-pickmeup.herokuapp.com/" || "http://localhost:3000/";
 
 
 // Get All Trips

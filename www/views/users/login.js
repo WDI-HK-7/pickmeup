@@ -2,7 +2,7 @@ angular.module('App')
 
 .controller('LoginCtrl', ['$scope', '$http', '$location', function($scope, $http, $location){
 
-  var url = "http://localhost:3000/"
+  var url = "https://wdi-pickmeup.herokuapp.com/" || "http://localhost:3000/";
 
   $scope.user = {};
   $scope.form = {};
@@ -23,8 +23,8 @@ angular.module('App')
 
     });
   };
-  
-// {withCredentials: true}, 
+
+// {withCredentials: true},
 
 }]);
 

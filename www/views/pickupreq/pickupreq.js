@@ -2,7 +2,7 @@ angular.module('App')
 
 .controller('PickupreqCtrl', ['$scope', '$http', '$location', function($scope, $http, $location){
 
-  var url = "http://localhost:3000/"
+  var url = "https://wdi-pickmeup.herokuapp.com/" || "http://localhost:3000/";
 
   $scope.form = {};
   $scope.post = {};
@@ -47,7 +47,7 @@ angular.module('App')
 //   $scope.form = {};
 //   // $scope.user = {};
 //   var url = "<%= ENV['URL'] %>" || "http://localhost:3000/";
-  
+
 //     $http.get(url + 'posts').success(function(response){
 //       console.log(response)
 
