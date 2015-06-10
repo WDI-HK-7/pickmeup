@@ -7,6 +7,7 @@ angular.module('App')
   $scope.getOpenTrips = function(status) {
     $http.get(url + 'authenticated').success(function(response){
       user = response;
+      console.log(user)
 
       $http.get(url + '/users/' + user.id + '/postmanposts?status=' + status).success(function(response){
         console.log(response);
@@ -15,6 +16,6 @@ angular.module('App')
     });
   }
 
-  $scope.getOpenTrips('open');
+  $scope.getOpenTrips('processing');
 
 }]);

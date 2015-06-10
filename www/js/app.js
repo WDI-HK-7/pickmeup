@@ -28,12 +28,6 @@ angular.module('App', ['ionic'])
 		// tell the state to load a template from a given url when view is active
 		templateUrl: 'views/home/home.html'
 	})
-	.state('reservation', {
-		url: '/reservation',
-		// declare the name of the controller for this view. note that home doesn't have a a controller
-		controller: 'ReservationController',
-		templateUrl: 'views/reservation/reservation.html'
-	})
 	.state('pickupreq', {
 		url: '/pickupreq',
 		controller: 'PickupreqCtrl',
