@@ -3,6 +3,8 @@ angular.module('App')
 .controller('MapCtrl2', function($scope, $ionicLoading) {
 
     $scope.location = {};
+    var marker;
+    // var infowindow;
 
     google.maps.event.addDomListener(window, 'dblclick', function() {
         // shows IFC as default starting spot:
@@ -23,6 +25,7 @@ angular.module('App')
                 map: map,
                 title: "My Location"
             });
+            console.log("MY LOCATION! --> "+myLocation);
 
             $scope.location.address = myLocation['position'];
             console.log($scope.location.address);
@@ -45,8 +48,7 @@ angular.module('App')
               console.log(lng);
 
               var geocoder = new google.maps.Geocoder();
-              var infowindow = new google.maps.InfoWindow();
-              var marker;
+              // infowindow = new google.maps.InfoWindow();
 
               var latlng = new google.maps.LatLng(lat, lng);
               geocoder.geocode({'latLng': latlng}, function(results, status) {
@@ -57,8 +59,8 @@ angular.module('App')
                         position: latlng,
                         map: map
                     });
-                    infowindow.setContent(results[1].formatted_address);
-                    infowindow.open(map, marker);
+                    // infowindow.setContent(results[1].formatted_address);
+                    // infowindow.open(map, marker);
                     console.log(results[1]);
                     console.log("The address is " + results[1]['formatted_address']);
                   } else {
@@ -72,8 +74,19 @@ angular.module('App')
               });
             }
             coordToAdd(input);
+            
+            google.maps.event.addListener(map, 'center_changed', function() {
+               // 0.1 seconds after the center of the map has changed,
+               // set back the marker position.
+               window.setTimeout(function() {
+                 var center = map.getCenter();
+                 marker.setPosition(center);
+               }, 100);
+            });
 
             google.maps.event.addDomListener(window, 'mouseup', function() {
+              myLocation.setMap(null);
+              marker.setMap(null);
               console.log("this" + map.getCenter());
               var elem = document.getElementById("mycurloc");
               elem.value = map.getCenter();
@@ -81,6 +94,9 @@ angular.module('App')
 
               coordToAdd(newinput);
             }); 
+
+          google.maps.event.addListener(window, 'mousedown', function() {
+          });
 
         });
     $scope.map = map;
