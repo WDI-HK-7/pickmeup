@@ -2,6 +2,15 @@ angular.module('App')
 
 .controller('MapCtrl2', function($scope, $ionicLoading) {
 
+    document.getElementById("the-form").style.display = 'none';
+
+    $scope.showForm = function() {
+      document.getElementById("map").style.display = 'none'
+      document.getElementById("map-button").style.display = 'none'
+      var form = document.getElementById("the-form");
+      form.style.display = 'block';
+    }
+
     $scope.location = {};
     var marker;
     // var infowindow;
@@ -15,9 +24,9 @@ angular.module('App')
             zoom: 16,
             mapTypeId: google.maps.MapTypeId.ROADMAP
         };
- 
+
         var map = new google.maps.Map(document.getElementById("map"), mapOptions);
- 
+
         navigator.geolocation.getCurrentPosition(function(pos) {
             map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
             var myLocation = new google.maps.Marker({
@@ -74,7 +83,7 @@ angular.module('App')
               });
             }
             coordToAdd(input);
-            
+
             google.maps.event.addListener(map, 'center_changed', function() {
                // 0.1 seconds after the center of the map has changed,
                // set back the marker position.
@@ -93,7 +102,7 @@ angular.module('App')
               newinput = elem.value;
 
               coordToAdd(newinput);
-            }); 
+            });
 
           google.maps.event.addListener(window, 'mousedown', function() {
           });
