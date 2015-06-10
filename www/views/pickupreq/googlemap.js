@@ -3,14 +3,11 @@ angular.module('App')
 //below for google maps. Document suggested this controller added as part of app.js but we are having this in this directory to keep consistent with other files
 
 .controller('MapController', function($scope, $ionicLoading) {
+    $scope.location = {};
 
     google.maps.event.addDomListener(window, 'dblclick', function() {
-        // shows Victoria Harbour as default:
-        var myLatlng = new google.maps.LatLng(22.28878, 114.16975);
-        // shows Tokyo:
-        // var myLatlng = new google.maps.LatLng(35.313038, 139.786068);
-        // shows LA:
-        // var myLatlng = new google.maps.LatLng(37.3000, -120.4833);
+        // shows IFC as default starting spot:
+        var myLatlng = new google.maps.LatLng(22.284900, 114.1589169);
 
         var mapOptions = {
             center: myLatlng,
@@ -28,13 +25,15 @@ angular.module('App')
                 title: "My Location"
             });
             // console.log(myLocation);
-            console.log(myLocation['position']);
-            console.log("Your current coordinates are "+myLocation['position']);
+            // console.log(myLocation['position']);
+            // console.log("Your current coordinates are " + myLocation['position']);
+            $scope.location.address = myLocation['position'];
+            console.log($scope.location.address);
+            var elem = document.getElementById("mycurloc");
+            elem.value = myLocation['position'];
 
-            google.maps.event.addDomListener(window, 'click', function() {
-              var elem = document.getElementById("mycurloc");
-              elem.value = myLocation['position'];
-            }); 
+            // google.maps.event.addDomListener(window, 'click', function() {
+            // }); 
     });
     $scope.map = map;
   });

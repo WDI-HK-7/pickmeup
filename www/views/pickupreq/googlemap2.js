@@ -25,14 +25,14 @@ angular.module('App')
 
   $scope.form.codeLatLng =function() {
 
-    var data = {
-      location: {
-        locations:$scope.location
-      }
-    };
+    // var data = {
+    //   location: {
+    //     locations:$scope.location
+    //   }
+    // };
 
     console.log("setting location...");
-    console.log(data);
+    // console.log("testing" + data);
 
     // below from google maps API demo; not used
     // var input = document.getElementById('latlng').value;
