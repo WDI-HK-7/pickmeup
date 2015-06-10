@@ -66,6 +66,11 @@ angular.module('App', ['ionic','uiGmapgoogle-maps'])
 		controller: 'MapCtrl',
 		templateUrl: 'views/pickupreq/pickuplocation.html'
 	})
+	.state('pickuplocation2', {
+		url: '/pickuplocation2',
+		controller: 'MapCtrl2',
+		templateUrl: 'views/pickupreq/pickuplocation2.html'
+	})
 	.state('trackreq', {
 		url: '/trackreq',
 		controller: 'TrackreqCtrl',

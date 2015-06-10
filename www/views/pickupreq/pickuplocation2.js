@@ -1,6 +1,6 @@
 angular.module('App')
 
-.controller('MapCtrl', function($scope, $ionicLoading) {
+.controller('MapCtrl2', function($scope, $ionicLoading) {
 
     $scope.location = {};
 
@@ -28,50 +28,11 @@ angular.module('App')
             console.log($scope.location.address);
             var elem = document.getElementById("mycurloc");
             elem.value = myLocation['position'];
-
             var input = elem.value;
-            var latlngStr = input.replace(/\(|\)/g,'');
-            console.log("latlngStr now=" + latlngStr)
+            console.log("testttt" +input)
 
-            latlngStr = latlngStr.split(',', 2);
-            console.log(latlngStr);
-            var lat = parseFloat(latlngStr[0]);
-            var lng = parseFloat(latlngStr[1]);
-
-            console.log(lat);
-            console.log(lng);
-
-            var geocoder = new google.maps.Geocoder();
-            var infowindow = new google.maps.InfoWindow();
-            var marker;
-
-            var latlng = new google.maps.LatLng(lat, lng);
-            geocoder.geocode({'latLng': latlng}, function(results, status) {
-              if (status == google.maps.GeocoderStatus.OK) {
-                if (results[1]) {
-                  map.setZoom(16);
-                  marker = new google.maps.Marker({
-                      position: latlng,
-                      map: map
-                  });
-                  infowindow.setContent(results[1].formatted_address);
-                  infowindow.open(map, marker);
-                  console.log(results[1]);
-                  console.log("The address is " + results[1]['formatted_address']);
-                } else {
-                  alert('No results found');
-                }
-              } else {
-                alert('Geocoder failed due to: ' + status);
-              }
-
-              elem.value = results[1]['formatted_address'];
-            });
-
-            google.maps.event.addDomListener(window, 'mouseup', function() {
-              console.log(map.getCenter());
-              var input = map.getCenter();
-
+            // this is where we convert coordinates into address
+            function coordToAdd(input) {
               var latlngStr = input.replace(/\(|\)/g,'');
               console.log("latlngStr now=" + latlngStr)
 
@@ -109,9 +70,16 @@ angular.module('App')
 
                 elem.value = results[1]['formatted_address'];
               });
+            }
+            coordToAdd(input);
 
+            google.maps.event.addDomListener(window, 'mouseup', function() {
+              console.log("this" + map.getCenter());
+              var elem = document.getElementById("mycurloc");
+              elem.value = map.getCenter();
+              newinput = elem.value;
 
-
+              coordToAdd(newinput);
             }); 
 
         });
