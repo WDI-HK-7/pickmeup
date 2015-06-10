@@ -10,13 +10,13 @@
 
     <!-- Header Information -->
       <div class="item item-avatar">
-        <img src="http://placehold.it/80x80">
+        <img src="images/profile.png">
         <h2 class="trip-header">{{ post.username }}</h2>
         <p class="trip-header">Package Type: {{ post.packagetype }}</p>
       </div>
 
       <div class="item item-body item-text-wrap trip-content">
-        
+
       <!-- Location Information -->
         <div class="wrap" style="text-align: center">
           <div class="item location-item" style="border: 1px solid #ddd; border-radius: 4px; vertical-align: top">
@@ -42,15 +42,15 @@
           <div class="item time-item time-item-1" style="border: none;vertical-align: top">
             <b>Pick-Up Time:</b>
             <br>
-            {{ post.pudate + ", " + post.putime }}
+            {{ post.earlyputime + ", " + post.lateputime }}
           </div>
           <div class="item time-item item-text-wrap" style="border: none;vertical-align: top">
             <b>Delivery Time:</b>
             <br>
-            {{ post.delidate + ", " + post.delitime }}
+            {{ post.earlydelitime + ", " + post.latedelitime }}
           </div>
         </div>
-        
+
       <!-- Remarks -->
         <p class="trip-body">
           <b>Remarks:</b>
@@ -63,9 +63,40 @@
           <button class="button button-block button-positive take-order-button" ng-click="updateStatusToProcessing($index)">
           Take This Order!
           </button>
+
+        <!-- Modal Window    -->
+          <script id="templates/modal.html" type="text/ng-template">
+            <ion-modal-view ng-repeat="post in posts track by $index">
+              <ion-header-bar class="bar bar-header bar-dark">
+                <h1 class="title">Order Accepted</h1>
+                <button class="button button-clear button-primary" ng-click="cancelOrder($index)">Cancel</button>
+              </ion-header-bar>
+              <ion-content class="padding">
+                <center>
+                  <br>
+                  <p style="font-size: 20px;">
+                    <b><span style="font-size: 20px;">Thank You For Accepting This Order.</span></b>
+                    <br>
+                    <br>
+                    <br>
+                    Please contact <b>{{ post.username }}</b> at
+                    <br>
+                    <span style="font-size: 25px; line-height: 40px;"><b>{{ post.contactnum }}</b></span>
+                    <br>
+                    to confirm delivery details.
+                    <br>
+                    <br>
+                  </p>
+                </center>
+                <a class="button button-full icon-left ion-ios7-telephone button-positive" ng-href="tel: {{ post.contactnum }}">Call Now</a>
+                <button class="button button-full button-dark" ng-click="callLater()">Call Later</button>
+              </ion-content>
+            </ion-modal-view>
+          </script>
         </div>
       </div>
     </div>
+
 
   </ion-content>
 </ion-view>

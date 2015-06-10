@@ -24,13 +24,13 @@
 
     <!-- Header Information -->
       <div class="item item-avatar">
-        <img src="http://placehold.it/80x80">
+        <img src="images/profile.png">
         <h2 class="trip-header">{{ post.username }}</h2>
         <p class="trip-header">Package Type: {{ post.packagetype }}</p>
       </div>
 
       <div class="item item-body item-text-wrap trip-content">
-        
+
       <!-- Location Information -->
         <div class="wrap" style="text-align: center">
           <div class="item location-item" style="border: 1px solid #ddd; border-radius: 4px; vertical-align: top">
@@ -56,15 +56,15 @@
           <div class="item time-item time-item-1" style="border: none;vertical-align: top">
             <b>Pick-Up Time:</b>
             <br>
-            {{ post.pudate + ", " + post.putime }}
+            {{ post.earlyputime + ", " + post.lateputime }}
           </div>
           <div class="item time-item item-text-wrap" style="border: none;vertical-align: top">
             <b>Delivery Time:</b>
             <br>
-            {{ post.delidate + ", " + post.delitime }}
+            {{ post.latedelitime + ", " + post.latedelitime }}
           </div>
         </div>
-        
+
       <!-- Remarks -->
         <p class="trip-body">
           <b>Remarks:</b>
@@ -72,12 +72,12 @@
           {{ post.remarks }}
         </p>
 
-      <!-- Take This Order Button -->
-        <div class="take-order-wrap">
+      <!-- Cancel This Order Button -->
+<!--         <div class="take-order-wrap">
           <button class="button button-block button-positive take-order-button" ng-click="updateStatusToProcessing($index)">
-          Take This Order!
+          Cancel This Order!
           </button>
-        </div>
+        </div> -->
       </div>
     </div>
 

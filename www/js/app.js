@@ -18,26 +18,21 @@ angular.module('App', ['ionic'])
 	.state('landing', {
 		// the state is given a url that can be used with anchor links
 		url: '/landing',
-		// tell the state to load a template from a given url when view is active
+		controller: 'LandingCtrl',
 		templateUrl: 'views/landing/landing.html'
 	})
 	.state('home', {
 		// the state is given a url that can be used with anchor links
 		url: '/home',
+		controller: "HomeCtrl",
 		// tell the state to load a template from a given url when view is active
 		templateUrl: 'views/home/home.html'
-	})
-	.state('reservation', {
-		url: '/reservation',
-		// declare the name of the controller for this view. note that home doesn't have a a controller
-		controller: 'ReservationController',
-		templateUrl: 'views/reservation/reservation.html'
 	})
 	.state('pickupreq', {
 		url: '/pickupreq',
 		controller: 'PickupreqCtrl',
 		templateUrl: 'views/pickupreq/pickupreq.html'
-	})	
+	})
 	.state('googlemap', {
 		url: '/googlemap',
 		controller: 'MapController',
@@ -68,8 +63,18 @@ angular.module('App', ['ionic'])
 		controller: 'TripfilterCtrl',
 		templateUrl: 'views/trip/tripfilter.html'
 	})
+	.state('tracktrip', {
+		url: '/tracktrip',
+		controller: 'TracktripCtrl',
+		templateUrl: 'views/tracktrip/tracktrip.html'
+	})
+	.state('closedtrip', {
+		url: '/closedtrip',
+		controller: 'ClosedtripCtrl',
+		templateUrl: 'views/tracktrip/closedtrip.html'
+	})
 	.state('login', {
-		url: '/login',	
+		url: '/login',
 		// note: where is this defined?? in login.js
 		controller: 'LoginCtrl',
 		templateUrl: 'views/users/login.html'
@@ -83,7 +88,7 @@ angular.module('App', ['ionic'])
 		url: '/logout',
 		controller: 'LogoutCtrl',
 		templateUrl: 'views/users/logout.html'
-	});	
+	});
 	// declare fallback url to go to if the app cannot find the requested state, like the 404 error page on website. it user requests state that doesn't exist -  the otherwise route will be used to display home view.
 
 	$urlRouterProvider.otherwise('/landing');

@@ -1,35 +1,47 @@
 
 <ion-view view-title="Pick Me Up" hide-back-button="true">
-  
+
   <!-- the content will be wrapped in ion-content most of the time. one exception includes tabs. -->
   <ion-content>
     <!-- added list class to container element to designate list container  -->
     <div class="list">
       <!-- add the item class to an element to create a list item, in this case for linking to another view. Without class="item" it would still show the link, but really ugly and not ios-like -->
       <!-- we are using <i> because typically <i> is an inline element that only modifies the text inside. Since we have no text inside, jsut two CSS classes, the first class gives the element the base CSS style for icon and the second portion gives the specific icon to display -->
+      <div class="profile-area">
+        <br>
+        <br>
+        <img src="images/profile.png" class="profile-picture">
+        <br>
+        <span class="username">{{ user.username }}</span>
+        <br>
+        <span style="font-size: 13px">Edit Profile</span>
+        <br>
+        <br>
+      </div>
+
       <div class="item item-divider">Client</div>
       <a href="#pickupreq" class="item item-icon-left home-menu"><i class="icon ion-email"></i>Make A Pick-Up Request</a>
 
       <a href="#/trackreq" class="item item-icon-left home-menu"><i class="icon ion-android-bicycle"></i>Track Your Request(s)</a>
 
-      <div class="item item-divider">Postman</div>
+      <div class="item item-divider">Runner</div>
       <a href="#/tripsearch" class="item item-icon-left home-menu"><i class="icon ion-search"></i>Search For A Trip</a>
-     
-      <a href="#/triptrack" class="item item-icon-left home-menu"><i class="icon ion-clipboard"></i>Track Your Trip(s)</a>
-      
+
+      <a href="#/tracktrip" class="item item-icon-left home-menu"><i class="icon ion-clipboard"></i>Track Your Trip(s)</a>
+
       <!-- <a href="#/" class="item item-icon-left"><i class="icon ion-cross"></i>. </a> -->
-      
+
       <!-- item-icon-right would put the icon on the right hand side. -->
-<!--       <a href="#/signup" class="item item-icon-left"> 
+<!--       <a href="#/signup" class="item item-icon-left">
         <i class="icon ion-document-text"></i> Sign Up </a>
 
-      <a href="#/login" class="item item-icon-left"> 
+      <a href="#/login" class="item item-icon-left">
         <i class="icon ion-document-text"></i> Log in </a>
  -->
-  <!--     <a href="#/logout" class="item item-icon-left"> 
+  <!--     <a href="#/logout" class="item item-icon-left">
         <i class="icon ion-document-text"></i> Log out </a>
-        
-      <a href="#/reservation" class="item item-icon-left"> 
+
+      <a href="#/reservation" class="item item-icon-left">
         <i class="icon ion-document-text"></i> See your reservation </a> -->
 
 
@@ -46,7 +58,7 @@
 
 </ion-view>
 
-<!-- 
+<!--
 reservation = request pickup
 weather = trackpickup
 restuarants = pickuprecord

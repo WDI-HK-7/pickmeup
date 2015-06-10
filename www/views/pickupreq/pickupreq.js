@@ -19,33 +19,22 @@ angular.module('App')
       post: {// post: $scope.post
         'pulocation': $scope.post.pulocation,
         'packagetype': $scope.post.packagetype,
-        'pudate': $scope.post.pudate,
-        'putime': $scope.post.putime,
+        'earlyputime': $scope.post.earlyputime,
+        'lateputime': $scope.post.lateputime,
         'destination': $scope.post.destination,
-        'delidate': $scope.post.delidate,
-        'delitime': $scope.post.delitime,
+        'earlydelitime': $scope.post.earlydelitime,
+        'latedelitime': $scope.post.latedelitime,
         'remarks': $scope.post.remarks,
         'status': 'open',
       }
     };
-
-
-    // var data = {
-    //   // post: $scope.post
-    //   'post[pulocation]': $scope.post.pulocation,
-    //   'post[putime]': $scope.post.putime,
-    //   'post[destination]': $scope.post.destination,
-    //   'post[delitime]': $scope.post.delitime,
-    //   'post[contactnum]': $scope.post.contactnum
-    // };
-
 
     console.log(data);
 
     $http.post(url + 'posts', data).success(function(response){
       console.log(response);
 
-    $location.path('/tripsearch');
+    $location.path('/trackreq');
 
     });
   };

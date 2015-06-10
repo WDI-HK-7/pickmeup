@@ -6,7 +6,7 @@ body {
 }
 
 .index-scroll-content {
- background: url(https://download.unsplash.com/uploads/1413259835094dcdeb9d3/6e609595) no-repeat center center fixed; 
+ background: url(../images/background.jpeg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -20,21 +20,24 @@ body {
   color: white;
   font-size: 65px;
   line-height: 30px;
-  padding: 80px 0px 25px 0px;
+  padding: 55px 0px 25px 0px;
   text-shadow: 2px 1px 5px #000000;
 }
 
 .me {
-  color: #4B504E;
+  color: #6D7571;
 }
 
 .index-card-blurb, .index-blurb {
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(33, 43, 46, 0.4);
+
   box-shadow: none;
   text-align: center;
   color: #ffffff;
-  font-size: 25px;
-  text-shadow: 3px 3px 3px #000000;
+  font-size: 20px;
+  /*font-weight: bold;*/
+  text-shadow: 1px 1px 2px #000000;
+  line-height: 25px;
 }
 
 .button-wrap {
@@ -64,6 +67,19 @@ body {
   padding-bottom: 30px;
 }
 
+.profile-area {
+  text-align: center;
+}
+
+.profile-picture {
+  border-radius: 100px;
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.username {
+  text-transform: uppercase;`
+}
 /******************Search Trips***********************/
 
 .trip-card {
@@ -112,7 +128,7 @@ body {
 .scroll {
     height: 100%;
 }
- 
+
 #map {
     width: 100%;
     height: 100%;
