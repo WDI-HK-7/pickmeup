@@ -25,7 +25,7 @@
     <!-- Header Information -->
       <div class="item item-avatar">
         <img src="images/profile.png">
-        <h2 class="trip-header">{{ post.username }}</h2>
+        <h2 class="trip-header">Being Delivered By: {{ post.postman_username }}</h2>
         <p class="trip-header">Package Type: {{ post.packagetype }}</p>
       </div>
 
@@ -84,6 +84,7 @@
           Cancel This Order!
           </button>
         </div> -->
+        <a class="button button-full icon-left ion-ios7-telephone button-positive" ng-href="tel: {{ post.postman_contactnum }}">Call {{ post.postman_username }}</a>
       </div>
     </div>
 
