@@ -47,7 +47,7 @@ angular.module('App')
     var marker;
     // var infowindow;
 
-    google.maps.event.addDomListener(window, 'dblclick', function() {
+    var test = function() {
         // shows IFC as default starting spot:
         var myLatlng = new google.maps.LatLng(22.284900, 114.1589169);
 
@@ -142,6 +142,13 @@ angular.module('App')
 
         });
     $scope.map = map;
+  }
+
+  ionic.DomUtil.ready(function(){
+    // Remove assertive (red) style to use balanced (green)
+    test();
   });
+
+  // google.maps.event.addDomListener(window, 'load', test);
 
 });
