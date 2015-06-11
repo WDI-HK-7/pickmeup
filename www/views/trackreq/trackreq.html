@@ -55,13 +55,19 @@
         <div class="wrap" style="text-align: center; vertical-align: top">
           <div class="item time-item time-item-1" style="border: none;vertical-align: top">
             <b>Pick-Up Time:</b>
-            <br>
-            {{ post.earlyputime + ", " + post.lateputime }}
-          </div>
-          <div class="item time-item item-text-wrap" style="border: none;vertical-align: top">
-            <b>Delivery Time:</b>
-            <br>
-            {{ post.earlydelitime + ", " + post.latedelitime }}
+             <br>
+              <span style="font-size: 18px;">{{ post.earlyputime | date:'MMM-dd, h:mm a' }} <br>
+               to</span>
+               <br>
+              <span style="font-size: 18px;">{{ post.lateputime | date:'MMM-dd, h:mm a' }}</span>
+           </div>
+           <div class="item time-item item-text-wrap" style="border: none;vertical-align: top">
+             <b>Delivery Time:</b>
+             <br>
+            <span style="font-size: 18px;">{{ post.earlydelitime | date:'MMM-dd, h:mm a' }} <br>
+              to</span>
+              <br>
+             <span style="font-size: 18px;">{{ post.latedelitime | date:'MMM-dd, h:mm a' }}</span>
           </div>
         </div>
 
